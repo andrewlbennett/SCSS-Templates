@@ -1,0 +1,38 @@
+/* Decoration */
+
+.italic {
+    font-style: italic;
+}
+
+.roman {
+    font-style: normal;
+}
+
+.lowercase {
+    text-transform: lowercase;
+}
+
+.uppercase {
+    text-transform: uppercase;
+}
+
+.capitalize {
+    text-transform: capitalize;
+}
+
+.normal-case {
+    text-transform: none;
+}
+
+.underline {
+    text-decoration: underline;
+}
+
+.underline--none {
+    text-decoration: none;
+}
+
+.strike,
+.line-through {
+    text-decoration: line-through;
+}

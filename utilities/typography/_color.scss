@@ -1,0 +1,50 @@
+/* Color */
+
+.text-primary {
+    color: var(--primary-color);
+}
+
+.text-secondary {
+    color: var(--secondary-color);
+}
+
+.text-info {
+    color: var(--info);
+}
+
+.text-success {
+    color: var(--success);
+}
+
+.text-warning {
+    color: var(--warning);
+}
+
+.text-alert,
+.text-danger {
+    color: var(--danger);
+}
+
+.text-muted {
+    color: var(--text-muted);
+}
+
+.text-white {
+    color: white;
+}
+
+.text-black {
+    color: black;
+}
+
+.text-light {
+    color: white;
+}
+
+.text-dark {
+    color: black;
+}
+
+.text-transparent {
+    color: transparent;
+}
