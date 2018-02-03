@@ -1,3 +1,3 @@
-# SCSS Templates
+### One of the basic scss structures I use in projects.
 
-A place to store my most used scss files.
+Biggest inspiration for this is Salesforce's Lightning Design System. I have also pulled inspiration from bootstrap, tailwind, and bulma.
