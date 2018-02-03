@@ -1,2 +1,3 @@
-# scss-utilities
-A place to store my most used utility scss files
+# SCSS Templates
+
+A place to store my most used scss files.
