@@ -23,7 +23,7 @@
     --font-color: black;
     --border-color: black;
     box-sizing: border-box;
-    font-size: 16px;
+    font-size: 16px; //Overrides users set font size and sets base for rem units globally.
     font-weight: 400;
     font-smoothing: antialiased;
     font-family: var(--font-family), -apple-system, BlinkMacSystemFont, Arial, sans-serif;
