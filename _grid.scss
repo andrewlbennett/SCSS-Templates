@@ -1,0 +1,193 @@
+/* Grid */ 
+
+/*
+Example - This is how I'm building out the structure of web apps now
+.wrapper - Grid set here
+  header
+    nav
+  aside
+    .sidebar-nav
+  main.page-name - This allows for setting grid on each page template.
+    section
+      .container
+        .section - Usually for multiple content sections.
+          .row
+            .columns
+        .row
+          .columns
+  footer
+*/
+
+// Columns
+$total-columns: 12;
+
+// Gutter Size
+$gutter: 1rem;
+
+// Breakpoints
+$xs: 0;
+$sm: 320px;
+$md: 640px;
+$lg: 992px;
+$xl: 1024px;
+$xxl: 1440px;
+
+// Sections
+section,
+.section {
+    padding: 4rem 0;
+}
+
+// Containers
+.container {
+    width: 95%; //Fallback
+    width: 95vw;
+    margin: 0 auto;
+    max-width: 1440px;
+    @media (min-width: $sm) {
+        width: 90%; //Fallback
+        width: 90vw;
+    }
+    @media (min-width: $md) {
+        width: 80%; //Fallback
+        width: 80vw;
+    }
+    @media (min-width: $lg) {
+        width: 70%; //Fallback
+        width: 70vw;
+    }
+    @media (min-width: $xl) {
+        width: 85%; //Fallback
+        width: 85vw;
+    }
+    @media (min-width: $xxl) {
+        width: 90%; //Fallback
+        width: 90vw;
+    }
+    &.fluid {
+        width: 100%; //Fallback
+        width: 100vw;
+    }
+}
+
+// Rows
+.row {
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    margin: 0 #{-$gutter}; // First and last column paddings.
+    &+.row {
+        margin-top: 1rem;
+    }
+    &.no-gutter {
+        margin: 0;
+        &>.col {
+            padding: 0;
+        }
+    }
+}
+
+// Columns
+.col {
+    box-sizing: border-box;
+    padding: 1rem;
+    max-width: 100%;
+    display: block;
+}
+
+// Media Queries
+// Extra Small
+@for $i from 1 through $total-columns {
+    .xs-#{$i} {
+        flex-basis: calc(#{$i / $total-columns * 100%});
+        max-width: calc(#{$i / $total-columns * 100%});
+    }
+}
+
+// Small
+@media (min-width: $sm) {
+    @for $i from 1 through $total-columns {
+        .sm-#{$i} {
+            flex-basis: calc(#{$i / $total-columns * 100%});
+            max-width: calc(#{$i / $total-columns * 100%});
+        }
+    }
+}
+
+// Medium
+@media (min-width: $md) {
+    @for $i from 1 through $total-columns {
+        .md-#{$i} {
+            flex-basis: calc(#{$i / $total-columns * 100%});
+            max-width: calc(#{$i / $total-columns * 100%});
+        }
+    }
+}
+
+// Large
+@media (min-width: $lg) {
+    @for $i from 1 through $total-columns {
+        .lg-#{$i} {
+            flex-basis: calc(#{$i / $total-columns * 100%});
+            max-width: calc(#{$i / $total-columns * 100%});
+        }
+    }
+}
+
+// XLarge
+@media (min-width: $xl) {
+    @for $i from 1 through $total-columns {
+        .xl-#{$i} {
+            flex-basis: calc(#{$i / $total-columns * 100%});
+            max-width: calc(#{$i / $total-columns * 100%});
+        }
+    }
+}
+
+// XXLarge
+@media (min-width: $xxl) {
+    @for $i from 1 through $total-columns {
+        .xxl-#{$i} {
+            flex-basis: calc(#{$i / $total-columns * 100%});
+            max-width: calc(#{$i / $total-columns * 100%});
+        }
+    }
+}
+
+// Hidden
+@media (min-width: $xs) {
+    .xs-hidden {
+        display: none;
+    }
+}
+
+@media (min-width: $sm) {
+    .sm-hidden {
+        display: none;
+    }
+}
+
+@media (min-width: $md) {
+    .md-hidden {
+        display: none;
+    }
+}
+
+@media (min-width: $lg) {
+    .lg-hidden {
+        display: none;
+    }
+}
+
+@media (min-width: $xl) {
+    .xl-hidden {
+        display: none;
+    }
+}
+
+@media (min-width: $xxl) {
+    .xxl-hidden {
+        display: none;
+    }
+}
