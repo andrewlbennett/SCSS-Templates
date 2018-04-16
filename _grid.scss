@@ -1,41 +1,36 @@
-/* Grid */ 
-
 /*
-Example - This is how I'm building out the structure of web apps now
+Basic Website Structure Approach
 .wrapper - Grid set here
-  header
-    nav
-  aside
-    .sidebar-nav
-  main.page-name - This allows for setting grid on each page template.
-    section
-      .container
-        .section - Usually for multiple content sections.
-          .row
+    header
+        nav
+    aside
+        .sidebar-nav
+    main.page-name - This allows for setting grid on each page template.
+        section
+        .container
+            .section - Usually for multiple content sections.
+            .row
+                .columns
+            .row
             .columns
-        .row
-          .columns
-  footer
+    footer
 */
 
 // Columns
 $total-columns: 12;
 
-// Gutter Size
-$gutter: 1rem;
-
 // Breakpoints
-$xs: 0;
-$sm: 320px;
-$md: 640px;
-$lg: 992px;
-$xl: 1024px;
-$xxl: 1440px;
+$xs : 0;
+$sm : 320px;
+$md : 640px;
+$lg : 992px;
+$xl : 1024px;
+$xxl : 1440px;
 
 // Sections
 section,
 .section {
-    padding: 4rem 0;
+    padding: 3rem 3rem;
 }
 
 // Containers
@@ -76,24 +71,55 @@ section,
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
-    margin: 0 #{-$gutter}; // First and last column paddings.
-    &+.row {
+    margin: 0 -0.75rem; // Takes into account the first/last column paddings.
+    & + .row {
         margin-top: 1rem;
     }
-    &.no-gutter {
-        margin: 0;
-        &>.col {
-            padding: 0;
-        }
+    &.reverse {
+        flex-direction: row-reverse;
+    }
+    &.between {
+        justify-content: space-between;
+    }
+    &.around {
+        justify-content: space-around;
+    }
+    &.top {
+        align-items: flex-top;
+    }
+    &.middle {
+        align-items: center;
+    }
+    &.bottom {
+        align-items: flex-end;
+    }
+    &.start {
+        justify-content: flex-start;
+    }
+    &.center {
+        justify-content: center;
+    }
+    &.end {
+        justify-content: flex-end;
     }
 }
 
 // Columns
 .col {
     box-sizing: border-box;
-    padding: 1rem;
+    padding: 0 0.75rem;
     max-width: 100%;
-    display: block;
+    &.first {
+        order: -1;
+    }
+    &.last {
+        order: 1;
+    }
+    &.auto {
+        flex-grow: 1;
+        flex-basis: 0;
+        max-width: 100%;
+    }
 }
 
 // Media Queries
@@ -103,6 +129,9 @@ section,
         flex-basis: calc(#{$i / $total-columns * 100%});
         max-width: calc(#{$i / $total-columns * 100%});
     }
+    .xs-offset-#{$i} {
+        margin-left: calc(#{$i / $total-columns * 100%});
+    }
 }
 
 // Small
@@ -111,6 +140,9 @@ section,
         .sm-#{$i} {
             flex-basis: calc(#{$i / $total-columns * 100%});
             max-width: calc(#{$i / $total-columns * 100%});
+        }
+        .sm-offset-#{$i} {
+            margin-left: calc(#{$i / $total-columns * 100%});
         }
     }
 }
@@ -122,6 +154,9 @@ section,
             flex-basis: calc(#{$i / $total-columns * 100%});
             max-width: calc(#{$i / $total-columns * 100%});
         }
+        .md-offset-#{$i} {
+            margin-left: calc(#{$i / $total-columns * 100%});
+        }
     }
 }
 
@@ -131,6 +166,9 @@ section,
         .lg-#{$i} {
             flex-basis: calc(#{$i / $total-columns * 100%});
             max-width: calc(#{$i / $total-columns * 100%});
+        }
+        .lg-offset-#{$i} {
+            margin-left: calc(#{$i / $total-columns * 100%});
         }
     }
 }
@@ -142,6 +180,9 @@ section,
             flex-basis: calc(#{$i / $total-columns * 100%});
             max-width: calc(#{$i / $total-columns * 100%});
         }
+        .xl-offset-#{$i} {
+            margin-left: calc(#{$i / $total-columns * 100%});
+        }
     }
 }
 
@@ -152,42 +193,8 @@ section,
             flex-basis: calc(#{$i / $total-columns * 100%});
             max-width: calc(#{$i / $total-columns * 100%});
         }
-    }
-}
-
-// Hidden
-@media (min-width: $xs) {
-    .xs-hidden {
-        display: none;
-    }
-}
-
-@media (min-width: $sm) {
-    .sm-hidden {
-        display: none;
-    }
-}
-
-@media (min-width: $md) {
-    .md-hidden {
-        display: none;
-    }
-}
-
-@media (min-width: $lg) {
-    .lg-hidden {
-        display: none;
-    }
-}
-
-@media (min-width: $xl) {
-    .xl-hidden {
-        display: none;
-    }
-}
-
-@media (min-width: $xxl) {
-    .xxl-hidden {
-        display: none;
+        .xxl-offset-#{$i} {
+            margin-left: calc(#{$i / $total-columns * 100%});
+        }
     }
 }
