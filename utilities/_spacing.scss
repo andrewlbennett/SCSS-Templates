@@ -244,6 +244,15 @@
 
 /* Margin */
 
+.m-around--auto {
+    margin: auto;
+}
+
+.m-horizontal-auto {
+    margin-right: auto;
+    margin-left: auto;
+}
+
 .m-around--none {
     margin: 0;
 }
@@ -330,6 +339,10 @@
     margin-top: .25rem;
 }
 
+.m-right--auto {
+    margin-right: auto;
+}
+
 .m-right--xxlarge {
     margin-right: 3rem;
 }
@@ -356,6 +369,10 @@
 
 .m-right--xx-small {
     margin-right: .25rem;
+}
+
+.m-left--auto {
+    margin-left: auto;
 }
 
 .m-left--xxlarge {
